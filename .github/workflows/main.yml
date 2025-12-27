@@ -16,7 +16,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.11.0' # 选择适合的 Node.js 版本
+          node-version: '22.15.0'
+          cache: 'pnpm'  # ✅ 启用 pnpm 缓存，加速后续构建
+      
+      - name: Install pnpm
+        run: npm install -g pnpm@latest
       
       - name: Install dependencies
         run: pnpm install
