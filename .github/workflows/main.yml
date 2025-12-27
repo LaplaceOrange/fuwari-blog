@@ -12,19 +12,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22.15.0' # 选择适合的 Node.js 版本
+          node-version: '22.15.0'
+          cache: 'pnpm'  # ✅ 启用 pnpm 缓存，加速后续构建
       
+      - name: Install pnpm
+        run: npm install -g pnpm@latest
+
       - name: Install dependencies
-        run: npm install
-      
+        run: pnpm install  # ✅ 关键修改：使用 pnpm 替代 npm
+
       - name: Build project
-        run: npm run build
-      
+        run: pnpm run build  # ✅ 建议统一用 pnpm 执行脚本（兼容性更好）
+
       - name: Deploy to EdgeOne Pages
-        run: npx edgeone pages deploy <outputDirectory> -n <projectName> -t ${{ secrets.EDGEONE_API_TOKEN }} [-e <env>]
+        run: npx edgeone pages deploy ./dist -n fuwari-blog -t ${{ secrets.EDGEONE_API_TOKEN }}
         env:
           EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
