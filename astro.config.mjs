@@ -23,10 +23,13 @@ import { parseDirectiveNode } from "./src/plugins/remark-directive-rehype.js";
 import { remarkExcerpt } from "./src/plugins/remark-excerpt.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-copy-button.js";
+import { defineConfig } from "astro/config";
+import edgeoneAdapter from "@edgeone/astro";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://fuwari.vercel.app/",
+	adapter: edgeoneAdapter(),
+	site: "https://blog.fsykk.cn/",
 	base: "/",
 	trailingSlash: "always",
 	integrations: [
@@ -170,3 +173,4 @@ export default defineConfig({
 		},
 	},
 });
+
