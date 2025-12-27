@@ -65,8 +65,12 @@
   },
   "devDependencies": {
     "@astrojs/ts-plugin": "^1.10.6",
+<<<<<<< HEAD
     "@biomejs/biome": "2.2.5",
     "@edgeone/astro": "^1.0.6",
+=======
+    "@biomejs/biome": "2.3.10",
+>>>>>>> d999c8777249e138b62a2b64780062b1ac4d952e
     "@rollup/plugin-yaml": "^4.1.2",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.2",
