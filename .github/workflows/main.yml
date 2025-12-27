@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.15.0'
-          cache: 'pnpm'  # ✅ 启用 pnpm 缓存，加速后续构建
+          cache: 'pnpm' 
       
       - name: Install pnpm
         run: npm install -g pnpm@latest
