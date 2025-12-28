@@ -17,12 +17,12 @@ jobs:
         with:
           node-version: '22.15.0'
           
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4.2.0
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          version: 7.0.0
+          version: 10
+          cache: true
 
-      # 现在 pnpm 命令可用
       - name: Install dependencies
         run: pnpm install  
 
