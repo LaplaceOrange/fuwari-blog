@@ -16,11 +16,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.15.0'
-          
+          cache: 'pnpm'
+
       - name: Install pnpm
-        uses: jjs98/pnpm-install-action@v6
-        with:
-          directory: src/client
+        run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install  
