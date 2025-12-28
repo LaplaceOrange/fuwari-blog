@@ -17,11 +17,10 @@ jobs:
         with:
           node-version: '22.15.0'
           
-      - uses: pnpm/action-setup@v4
-        name: Install pnpm
+      - name: Install pnpm
+        uses: jjs98/pnpm-install-action@v6
         with:
-          version: 10
-          cache: true
+          directory: src/client
 
       - name: Install dependencies
         run: pnpm install  
