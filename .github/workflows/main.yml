@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,18 +16,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22.15.0'
-          cache: 'pnpm'  # ✅ 启用 pnpm 缓存，加速后续构建
-      
+
       - name: Install pnpm
-        run: npm install -g pnpm@latest
+        run: npm install -g pnpm
 
       - name: Install dependencies
-        run: pnpm install  # ✅ 关键修改：使用 pnpm 替代 npm
+        run: pnpm install  
 
       - name: Build project
-        run: pnpm run build  # ✅ 建议统一用 pnpm 执行脚本（兼容性更好）
+        run: pnpm run build
 
-      - name: Deploy to EdgeOne Pages
-        run: npx edgeone pages deploy ./dist -n fuwari-blog -t ${{ secrets.EDGEONE_API_TOKEN }}
-        env:
-          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+      - name: EdgeOne Pages Deploy
+        uses: TencentEdgeOne/edgeone-pages-action@v1
+        with:
+          token: ${{ secrets.EDGEONE_API_TOKEN }}
+          project-name: fuwari-blog
+          build-path: ./dist
