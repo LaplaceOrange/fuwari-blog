@@ -1,7 +1,7 @@
 ---
-title: [OI] 各大排序算法模板
+title: "[OI] 各大排序算法模板"
 published: 2026-02-01
-description: OI中各大排序算法的模板，包括冒泡排序，选择排序，插入排序，计数排序等。
+description: "OI中各大排序算法的模板，包括冒泡排序，选择排序，插入排序，计数排序等。"
 tags: [OI, Template]
 category: OI
 draft: false

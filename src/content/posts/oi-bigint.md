@@ -1,7 +1,7 @@
 ---
-title: [OI] 高精度计算模板
+title: "[OI] 高精度计算模板”
 published: 2026-02-01
-description: OI中高精度计算的模板，包括大整数的加减乘除模等。
+description: "OI中高精度计算的模板，包括大整数的加减乘除模等。"
 tags: [OI, Template]
 category: OI
 draft: false
