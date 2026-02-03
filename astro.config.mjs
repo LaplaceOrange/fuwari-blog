@@ -27,9 +27,11 @@ import edgeoneAdapter from "@edgeone/astro";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
-    adapter: cloudflare(),
+    adapter: vercel(),
     site: "https://blog.fsykk.cn/",
     base: "/",
     trailingSlash: "always",

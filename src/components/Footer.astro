@@ -30,6 +30,11 @@ const deployPlatform = import.meta.env.SSR
         国际站 · Powered by Cloudflare
       </p>
     )}
+    {deployPlatform === 'vercel' && (
+      <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+        国际站 · Powered by Vercel
+      </p>
+    )}
     {deployPlatform === 'edgeone' && (
       <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
         中国站 · Powered by Tecent EdgeOne
