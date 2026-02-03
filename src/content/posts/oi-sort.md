@@ -274,3 +274,75 @@ int main()
     return 0;  
 }
 ```
+
+## 五、二叉树排序
+
+### 代码
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e5 + 5;
+struct node
+{
+    int data;
+    node *left, *right; // 左儿子和右儿子
+};
+void print(node *t) // 递归中序输出
+{
+    if (t == NULL)
+        return;
+    print(t->left);         // 左儿子
+    cout << t->data << " "; // 输出
+    print(t->right);        // 右儿子
+}
+int main()
+{
+    int n;
+    cin >> n;
+    int x;
+    cin >> x;
+    node *head = new node;
+    head->data = x;
+    head->left = NULL;
+    head->right = NULL;
+    for (int i = 2; i <= n; i++)
+    {
+        cin >> x;
+        node *q = new node;
+        q->data = x;
+        q->left = NULL;
+        q->right = NULL;
+        node *p = head;
+        while (p != NULL)
+        {
+            if (x <= p->data) // 小于等于就放到左儿子
+            {
+                if (p->left == NULL)
+                {
+                    p->left = q;
+                    break;
+                }
+                else
+                {
+                    p = p->left;
+                }
+            }
+            else // 大于就放到右儿子
+            {
+                if (p->right == NULL)
+                {
+                    p->right = q;
+                    break;
+                }
+                else
+                {
+                    p = p->right;
+                }
+            }
+        }
+    }
+    print(head); // 中序输出
+    return 0;
+}
+```
