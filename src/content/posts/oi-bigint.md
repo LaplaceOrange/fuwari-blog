@@ -9,9 +9,9 @@ draft: false
 
 ## 完整代码
 
-**洛谷例题请出门左转: ** [**P1932**](https://www.luogu.com.cn/problem/P1932)
+洛谷例题: [**P1932**](https://www.luogu.com.cn/problem/P1932)
 
-**AC记录: ** [**R260290757**](https://www.luogu.com.cn/record/260290757)
+AC记录: [**R260290757**](https://www.luogu.com.cn/record/260290757)
 
 ```cpp
 #include <bits/stdc++.h>
@@ -168,4 +168,4 @@ int main()
 }
 ```
 
-**PS: 目前Bigint模板只支持正数**
+**PS: Bigint模板只支持正数**
