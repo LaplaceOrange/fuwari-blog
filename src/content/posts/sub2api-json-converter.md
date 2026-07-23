@@ -1,6 +1,6 @@
 ---
 title: "[GitHub] Sub2API 账号迁移工具开发手记"
-published: 2026-02-01
+published: 2026-07-22
 description: "Sub2API 账号迁移工具的开发手记。"
 tags: [GitHub, AI]
 category: GitHub
